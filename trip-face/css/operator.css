@@ -1,0 +1,66 @@
+#page {
+	width: 1903px;
+	height: 1080px;
+}
+
+#titleTab #myTab {
+	width: 240px;
+	height: 1080px;
+	background-color: #1e2533;
+}
+
+#titleTab #myTab>li {
+	width: 240px;
+	float: left;
+}
+
+#titleTab #myTab>li>a {
+	text-align: center;
+}
+
+#titleTab #myTab>p {
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#titleTab {
+	float: left;
+	height: 1080px;
+	width: 240px;
+}
+
+#tle {
+	height: 80px;
+}
+
+#tle>div:first-child {
+	height: 80px;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	background-color: white;
+	width: 1482px;
+	float: left;
+	padding-left: 44px;
+}
+
+#userName {
+	height: 80px;
+	padding-bottom: 20px;
+	padding-top: 15px;
+	background-color: white;
+	width: 181px;
+	float: left;
+	padding-right: 46px;
+}
+
+#tle>div>img {
+	margin-left: 7px;
+}
+
+#group_title{
+	width: 1592;
+}
+#group_title > ul >li{
+	float: left;
+}

@@ -1,234 +1,311 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8" />
-		<title ></title>
+		<title></title>
 		<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/index.css" />
-		<script type="text/javascript" src="js/jquery.min.js" ></script>
-		<script type="text/javascript" src="js/bootstrap/bootstrap.min.js" ></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
 		<script src="js/echarts.js"></script>
 		<script type="text/javascript">
-			function home(var1){
+			function home(var1) {
 				$(this).next().remove();
-				}
-			function fo1(var2){
-				
 			}
-			function fo2(var3){
-				
+
+			function fo1(var2) {
+
+			}
+
+			function fo2(var3) {
+
 			}
 		</script>
 	</head>
+
 	<body>
 		<div id="page">
- <div id="titleTab">
-	<ul id="myTab" class="nav nav-tabs">
-	<p><img src="image/logo.png"/></p>
-	<li class="active"><a href="#home" data-toggle="tab" onclick="home(this);"><img src="image/kk.png"/>当前概况</a></li>
-	<li><a href="#ios" data-toggle="tab" onclick="fo1(this);"><img src="image/yy.png"/>运营数据</a></li>
-	<li class="dropdown"><a href="#java" data-toggle="tab" onclick="fo2(this);"><img src="image/ls.png"/>历史数据</a></li>
-</ul>
-</div>
-<div id="con">
-<div id="myTabContent" class="tab-content">
-	<div class="tab-pane fade in active" id="home">
-		<div id="tle">
-		<div>>    当前情况</div>
-		<div id="userName">古北水镇景区<img src="image/toux.png"/></div>
-		</div>
-<div id="msg">
-<table  width="1592" height="162" border="1px" >
-  <tr>
-    <td><p><img src="image/riqi.png"/>日期</p></td>
-    <td><p><img src="image/renshu.png"/>当前游客数(人)</p></td>
-    <td><p>距最大接待量剩余(人)</p></td>
-    <td><p><img src="image/zongrenshu.png"/>今日累计游客数</p></td>
-    <td><p><img src="image/time.png"/>平均停留时长</p></td>
-    <td><p><img src="image/menpiao.png"/>今日门票收入(元)</p></td>
-    <td><p><img src="image/xiaofei.png"/>今日消费收入(元)</p></td>
-    <td><p><img src="image/shouru.png"/>今日总收入(元)</p></td>
-  </tr>
-  <tr>
-    <td>2018/01/02 15:30</td>
-    <td style="color: #08a2f3;">3680</td>
-    <td style="color: #4ab643;">6320</td>
-    <td style="color: #f36008;">9830</td>
-    <td>28</td>
-    <td style="color: #08a2f3;">1966000</td>
-    <td style="color: #4ab643;">8700000</td>
-    <td style="color: #f36008;">10666000</td>
-  </tr>
-  <tr>
-    <td>2018/01/02 15:30</td>
-    <td>3200</td>
-    <td>6800</td>
-    <td>9642</td>
-    <td>32</td>
-    <td>1928400</td>
-    <td>7862500</td>
-    <td>9790900</td>
-  </tr>
-</table>
-		</div>
-<div id="se">
-	<div  id="nuberb">
-	<div class="hadline" >景区当前景点游客数量百分比</div>
-	<div class="data"><img src="image/li1.png"/>今日数据</div>
-	<div class="data"><img src="image/wai1.png"/>昨日数据</div>
-	<div class="div-padding" id="chart1" style="margin-left: -10%;"></div>
-	</div>
-	<div id="perber">
-	<div class="hadline">景区人数趋势预测图</div>
-	<div class="data"><img src="image/wai2.png"/>今日数据</div>
-	<div class="data"><img src="image/li2.png" />昨日数据</div>
-	<div class="div-padding" id="chart2" style=""></div>
-	<script type="text/javascript">
-	var myChart=echarts.init(document.getElementById('chart2'));
-	var option = {
-    toolbox: {
-        show : true
-    },
-    calculable : true,
-    xAxis : [
-        {
-            type : 'category',
-            boundaryGap : false,
-            data : ['7:00','8:00','9:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00','22:00',]
-        }
-    ],
-    yAxis : [
-        {
-            type : 'value'
-        }
-    ],
-    series : [
-        {
-            name:'今日数据',
-            type:'line',
+			<div id="titleTab">
+				<ul id="myTab" class="nav nav-tabs">
+					<p><img src="image/logo.png" /></p>
+					<li class="active">
+						<a href="#home" data-toggle="tab" onclick="home(this);"><img src="image/kk.png" />当前概况</a>
+					</li>
+					<li>
+						<a href="#ios" data-toggle="tab" onclick="fo1(this);"><img src="image/yy.png" />运营数据</a>
+					</li>
+					<li class="dropdown">
+						<a href="#java" data-toggle="tab" onclick="fo2(this);"><img src="image/ls.png" />历史数据</a>
+					</li>
+				</ul>
+			</div>
+			<div id="con">
+				<div id="myTabContent" class="tab-content">
+					<div class="tab-pane fade in active" id="home">
+						<div id="tle">
+							<div>> 当前情况</div>
+							<div id="userName">古北水镇景区<img src="image/toux.png" /></div>
+						</div>
+						<div id="msg">
+							<table width="1592" height="162" border="1px">
+								<tr>
+									<td>
+										<p><img src="image/riqi.png" />日期</p>
+									</td>
+									<td>
+										<p><img src="image/renshu.png" />当前游客数(人)</p>
+									</td>
+									<td>
+										<p>距最大接待量剩余(人)</p>
+									</td>
+									<td>
+										<p><img src="image/zongrenshu.png" />今日累计游客数</p>
+									</td>
+									<td>
+										<p><img src="image/time.png" />平均停留时长</p>
+									</td>
+									<td>
+										<p><img src="image/menpiao.png" />今日门票收入(元)</p>
+									</td>
+									<td>
+										<p><img src="image/xiaofei.png" />今日消费收入(元)</p>
+									</td>
+									<td>
+										<p><img src="image/shouru.png" />今日总收入(元)</p>
+									</td>
+								</tr>
+								<tr>
+									<td>2018/01/02 15:30</td>
+									<td style="color: #08a2f3;">3680</td>
+									<td style="color: #4ab643;">6320</td>
+									<td style="color: #f36008;">9830</td>
+									<td>28</td>
+									<td style="color: #08a2f3;">1966000</td>
+									<td style="color: #4ab643;">8700000</td>
+									<td style="color: #f36008;">10666000</td>
+								</tr>
+								<tr>
+									<td>2018/01/02 15:30</td>
+									<td>3200</td>
+									<td>6800</td>
+									<td>9642</td>
+									<td>32</td>
+									<td>1928400</td>
+									<td>7862500</td>
+									<td>9790900</td>
+								</tr>
+							</table>
+						</div>
+						<div id="se">
+							<div id="nuberb">
+								<div class="hadline">景区当前景点游客数量百分比</div>
+								<div class="data"><img src="image/li1.png" />今日数据</div>
+								<div class="data"><img src="image/wai1.png" />昨日数据</div>
+								<div class="div-padding" id="chart1" style="margin-left: -10%;"></div>
+							</div>
+							<div id="perber">
+								<div class="hadline">景区人数趋势预测图</div>
+								<div class="data"><img src="image/wai2.png" />今日数据</div>
+								<div class="data"><img src="image/li2.png" />昨日数据</div>
+								<div class="div-padding" id="chart2" style=""></div>
+								<script type="text/javascript">
+									var myChart = echarts.init(document.getElementById('chart2'));
+									var option = {
+										toolbox: {
+											show: true
+										},
+										calculable: true,
+										xAxis: [{
+											type: 'category',
+											boundaryGap: false,
+											data: ['7:00', '8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', ]
+										}],
+										yAxis: [{
+											type: 'value'
+										}],
+										series: [{
+											name: '今日数据',
+											type: 'line',
 
-            symbol: 'none',
-            smooth:true,
-            itemStyle: {normal: {areaStyle: {type: 'default'},color: new echarts.graphic.LinearGradient( 0, 0, 0, 1,[
-                    {offset: 0, color: 'rgba(122,245,196,0.7)'},
-                    {offset: 1, color: 'rgba(30,224,245,0.7)'}
-                ])}},
-            data:[0, 200, 700, 2400,3200, 5000, 5300, 5350, 5000, 5350, 6500, 3800, 2300,1500, 300, 150]
-        },        {
-            name:'昨日数据',
-            type:'line',
-            symbol: 'none',
-            smooth:true,
-            itemStyle: {normal: {areaStyle: {type: 'default'},color: new echarts.graphic.LinearGradient( 0, 0, 0, 1,[
-                    {offset: 0, color: 'rgba(255,172,136,0.5)'},
-                    {offset: 1, color: 'rgba(255,177,132,0.7)'}
-                ])}},
-            data:[10, 1100, 1800, 2400, 5000, 5800, 5700, 6110, 5200, 5500, 5450, 4000, 3100,1860, 500, 50]
-        }
-    ]
-};
- // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-</script>
-	</div>
-</div>
+											symbol: 'none',
+											smooth: true,
+											itemStyle: {
+												normal: {
+													areaStyle: {
+														type: 'default'
+													},
+													color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+															offset: 0,
+															color: 'rgba(122,245,196,0.7)'
+														},
+														{
+															offset: 1,
+															color: 'rgba(30,224,245,0.7)'
+														}
+													])
+												}
+											},
+											data: [0, 200, 700, 2400, 3200, 5000, 5300, 5350, 5000, 5350, 6500, 3800, 2300, 1500, 300, 150]
+										}, {
+											name: '昨日数据',
+											type: 'line',
+											symbol: 'none',
+											smooth: true,
+											itemStyle: {
+												normal: {
+													areaStyle: {
+														type: 'default'
+													},
+													color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+															offset: 0,
+															color: 'rgba(255,172,136,0.5)'
+														},
+														{
+															offset: 1,
+															color: 'rgba(255,177,132,0.7)'
+														}
+													])
+												}
+											},
+											data: [10, 1100, 1800, 2400, 5000, 5800, 5700, 6110, 5200, 5500, 5450, 4000, 3100, 1860, 500, 50]
+										}]
+									};
+									// 使用刚指定的配置项和数据显示图表。
+									myChart.setOption(option);
+								</script>
+							</div>
+						</div>
 
-<script type="text/javascript">
-	var myChart=echarts.init(document.getElementById('chart1'));
-	var option = {
-    tooltip: {
-        trigger: 'item',
-        formatter: " {b}:  ({d}%)"
-    },
-    legend: {
-        orient: 'vertical',
-          x: 'right',
-        y:'65',
-        data:['古北水镇','司马小烧酒坊','永顺染坊','震远镖局','八旗会馆','司马台长城']
-    },
-    series: [
-        {
-            name:'访问来源',
-            type:'pie',
-            selectedMode: 'single',
-            radius: [0, '55%'],
+						<script type="text/javascript">
+							var myChart = echarts.init(document.getElementById('chart1'));
+							var option = {
+								tooltip: {
+									trigger: 'item',
+									formatter: " {b}:  ({d}%)"
+								},
+								legend: {
+									orient: 'vertical',
+									x: 'right',
+									y: '65',
+									data: ['古北水镇', '司马小烧酒坊', '永顺染坊', '震远镖局', '八旗会馆', '司马台长城']
+								},
+								series: [{
+										name: '访问来源',
+										type: 'pie',
+										selectedMode: 'single',
+										radius: [0, '55%'],
 
-            label: {
-                normal: {
-                    position: 'inner'
-                }
-            },
-            labelLine: {
-                normal: {
-                    show: false
-                }
-            },
-            data:[
-                {value:180, name:'司马小\n烧酒\n坊18%'},
-                {value:130, name:'永顺\n染坊13%'},
-                {value:180, name:'震远\n镖局18%'},
-                {value:140, name:'八旗\n会馆\n14%'},
-                {value:150, name:'司马台\n长城\n15%'},
-                 {value:220, name:'古北\n水镇22%'}
-                 
-            ]
-        },
-        {
-            name:'访问来源',
-            type:'pie',
-            radius: ['67%', '83%'],
-            label: {
-                normal: {
-                    formatter: '{b}：{hr|}\n {per|{d}%}  ',
-                    backgroundColor: '#eee',
-                    borderColor: '#aaa',
-                    borderWidth: 1,
-                    borderRadius: 4,
-                    rich: {
-                        hr: {
-                            borderColor: '#aaa',
-                            width: 0,
-                            borderWidth: 0.5,
-                            height: 30
-                        },
-                        b: {
-                            fontSize: 14,
-                            lineHeight: 33
-                        },
-                        per: {
-                            color: '#000',
-                            padding: [2, 4],
-                            borderRadius: 2
-                        }
-                    }
-                }
-            },
-            data:[
-                {value:120, name:'司马小烧酒坊'},
-                {value:180, name:'永顺染坊'},
-                {value:100, name:'震远镖局'},
-                {value:180, name:'八旗会馆'},
-                {value:160, name:'司马台长城'},
-                {value:260, name:'古北水镇'}
-            ]
-        }
-    ]
-};
- // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-</script>
-<div id="mapmsg">
-	<p>景区当前人流热点、流向、人数地图</p>
-	
-</div>
-	</div>
-	<div class="tab-pane fade" id="ios">
-		<div id="tle">
-		<div>>    运营数据      >  今日游客画像统计</div>
-		<div id="userName">古北水镇景区<img src="image/toux.png"/></div>
-		</div>
-		
-	<!--<div id="yy">
+										label: {
+											normal: {
+												position: 'inner'
+											}
+										},
+										labelLine: {
+											normal: {
+												show: false
+											}
+										},
+										data: [{
+												value: 180,
+												name: '司马小\n烧酒\n坊18%'
+											},
+											{
+												value: 130,
+												name: '永顺\n染坊13%'
+											},
+											{
+												value: 180,
+												name: '震远\n镖局18%'
+											},
+											{
+												value: 140,
+												name: '八旗\n会馆\n14%'
+											},
+											{
+												value: 150,
+												name: '司马台\n长城\n15%'
+											},
+											{
+												value: 220,
+												name: '古北\n水镇22%'
+											}
+
+										]
+									},
+									{
+										name: '访问来源',
+										type: 'pie',
+										radius: ['67%', '83%'],
+										label: {
+											normal: {
+												formatter: '{b}：{hr|}\n {per|{d}%}  ',
+												backgroundColor: '#eee',
+												borderColor: '#aaa',
+												borderWidth: 1,
+												borderRadius: 4,
+												rich: {
+													hr: {
+														borderColor: '#aaa',
+														width: 0,
+														borderWidth: 0.5,
+														height: 30
+													},
+													b: {
+														fontSize: 14,
+														lineHeight: 33
+													},
+													per: {
+														color: '#000',
+														padding: [2, 4],
+														borderRadius: 2
+													}
+												}
+											}
+										},
+										data: [{
+												value: 120,
+												name: '司马小烧酒坊'
+											},
+											{
+												value: 180,
+												name: '永顺染坊'
+											},
+											{
+												value: 100,
+												name: '震远镖局'
+											},
+											{
+												value: 180,
+												name: '八旗会馆'
+											},
+											{
+												value: 160,
+												name: '司马台长城'
+											},
+											{
+												value: 260,
+												name: '古北水镇'
+											}
+										]
+									}
+								]
+							};
+							// 使用刚指定的配置项和数据显示图表。
+							myChart.setOption(option);
+						</script>
+						<div id="mapmsg">
+							<p>景区当前人流热点、流向、人数地图</p>
+
+						</div>
+					</div>
+					<div class="tab-pane fade" id="ios">
+						<div id="tle">
+							<div>> 运营数据 > 今日游客画像统计</div>
+							<div id="userName">古北水镇景区<img src="image/toux.png" /></div>
+						</div>
+
+						<!--<div id="yy">
 	<ul id="myTab" class="nav nav-tabs">
 	<li class="active">
 		<a href="#portrayal" data-toggle="tab">今日游客画像统计</a>
@@ -239,7 +316,7 @@
 	</li>
 </ul>
 </div>-->
-<!--<div id="myTabContent" class="tab-content">
+						<!--<div id="myTabContent" class="tab-content">
 	<div class="tab-pane fade in active" id="portrayal">
 		<p>菜鸟教程是一个提供最新的web技术站点，本站免费提供了建站相关的技术文档，帮助广大web技术爱好者快速入门并建立自己的网站。菜鸟先飞早入行——学的不仅是技术，更是梦想。</p>
 	</div>
@@ -251,18 +328,19 @@
 		<p>sadfdsf</p>
 	</div>
 </div>-->
-	</div>
-	<div class="tab-pane fade" id="java">
-		<div id="tle">
-		<div>>    历史数据  </div>
-		<div id="userName">古北水镇景区<img src="image/toux.png"/></div>
+					</div>
+					<div class="tab-pane fade" id="java">
+						<div id="tle">
+							<div>> 历史数据 </div>
+							<div id="userName">古北水镇景区<img src="image/toux.png" /></div>
+						</div>
+					</div>
+				</div>
+				<div id="footer">
+					<p><span>版权所有：大唐移动通信设备有限公司</span></p>
+				</div>
+			</div>
 		</div>
-	</div>
-</div>
-<div id="footer">
-	<p><span>版权所有：大唐移动通信设备有限公司</span></p>
-</div>
-</div>
-</div>
 	</body>
+
 </html>
