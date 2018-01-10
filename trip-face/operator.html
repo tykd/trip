@@ -45,13 +45,13 @@
 				<div id="nav">
 					<ul type="none">
 						<li>
-							<a onclick="hideandshow('1')">今日游客画像统计</a>
+							<a style="color:#08A2F3; font-weight: bold;" href="#">今日游客画像统计</a>
 						</li>
 						<li>
-							<a onclick="hideandshow('2')">今日景点人数统计</a>
+							<a href="operator_1.html">今日景点人数统计</a>
 						</li>
 						<li>
-							<a>距离最大接待量剩余（人）</a>
+							<a href="operator_2.html">距离最大接待量剩余（人）</a>
 						</li>
 					</ul>
 				</div>
@@ -306,7 +306,41 @@
 													position: 'inside'
 												}
 											},
-											data: [200, 300, 400, 500]
+											data: [{
+														value: 200,
+														itemStyle: {
+															normal: {
+																color: '#33FFFF'
+
+															}
+														}
+													},
+													{
+														value: 300,
+														itemStyle: {
+															normal: {
+																color: '#35ecba'
+
+															}
+														}
+													},{
+														value: 400,
+														itemStyle: {
+															normal: {
+																color: '#f97b37'
+
+															}
+														}
+													},
+													{
+														value: 500,
+														itemStyle: {
+															normal: {
+																color: '#d53131'
+
+															}
+														}
+													}]
 										}]
 									};
 									myChart.setOption(option);
@@ -327,7 +361,6 @@
 												color: '#000000'
 											}
 										},
-
 										tooltip: {
 											trigger: 'item',
 											formatter: "{a} <br/>{b} : {c} ({d}%)"
@@ -413,36 +446,80 @@
 								<script type="text/javascript">
 									var myChart = echarts.init(document.getElementById('box3-1'));
 									var option = {
-										backgroundColor: '#ffffff',
-										color: ['#3398DB'],
+										title: {
+											text: '各景点累计人数比例',
+											x: 'left'
+										},
 										tooltip: {
 											trigger: 'axis',
-											axisPointer: { // 坐标轴指示器，坐标轴触发有效
-												type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
-											}
 										},
-										grid: {
-											left: '3%',
-											right: '4%',
-											bottom: '3%',
-											containLabel: true
-										},
+										backgroundColor: '#ffffff',
 										xAxis: [{
 											type: 'category',
+											show: true,
 											data: ['古北水镇', '司马小烧酒坊', '永顺染坊', '震源镖局', '八旗会馆', '司马台长城'],
+											axisPointer: {
+												type: 'shadow'
+											},
 											axisTick: {
-												alignWithLabel: true
-											}
+												show: false
+											},
 										}],
 										yAxis: [{
 											type: 'value'
 										}],
 										series: [{
-											name: '访客人数',
-											type: 'bar',
-											barWidth: '60%',
-											data: [10, 52, 200, 334, 390, 330]
-										}]
+												name: '访客人数',
+												type: 'bar',
+												barWidth: '30%',
+												data: [{
+														value: 30,
+														itemStyle: {
+															normal: {
+																color: '#33FFFF'
+
+															}
+														}
+													},
+													{
+														value: 60,
+														itemStyle: {
+															normal: {
+																color: 'yellow'
+
+															}
+														}
+													},
+													{
+														value: 70,
+														itemStyle: {
+															normal: {
+																color: 'orange'
+
+															}
+														}
+													}, {
+														value: 80,
+														itemStyle: {
+															normal: {
+																color: '#00CCFF'
+
+															}
+														}
+													}, {
+														value: 20,
+														itemStyle: {
+															normal: {
+																color: '#C0C0C0'
+
+															}
+														}
+													}
+
+												]
+											}
+
+										]
 									};
 									myChart.setOption(option);
 								</script>
@@ -453,6 +530,14 @@
 								<script type="text/javascript">
 									var myChart = echarts.init(document.getElementById('box3-2'));
 									var option = {
+										title: {
+											text: '各景点附近消费占比',
+											left: 'left',
+											top: 20,
+											textStyle: {
+												color: '#000000'
+											}
+										},
 										backgroundColor: '#ffffff',
 										tooltip: {
 											trigger: 'item',
@@ -460,7 +545,7 @@
 										},
 										legend: {
 											orient: 'vertical',
-											x: 'left',
+											x: 'right',
 											data: ['观光车', '缆车', '自行车']
 										},
 										series: [{
@@ -488,15 +573,15 @@
 											},
 											data: [{
 													value: 335,
-													name: '直接访问'
+													name: '观光车'
 												},
 												{
 													value: 310,
-													name: '邮件营销'
+													name: '缆车'
 												},
 												{
 													value: 234,
-													name: '联盟广告'
+													name: '自行车'
 												}
 											]
 										}]
@@ -510,143 +595,85 @@
 								<script type="text/javascript">
 									var myChart = echarts.init(document.getElementById('box3-3'));
 									var option = {
-										backgroundColor: '#ffffff',
-										color: ['#3398DB'],
+										title: {
+											text: '游玩时长比例',
+											x: 'left'
+										},
 										tooltip: {
 											trigger: 'axis',
-											axisPointer: { // 坐标轴指示器，坐标轴触发有效
-												type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
-											}
 										},
-										grid: {
-											left: '3%',
-											right: '4%',
-											bottom: '3%',
-											containLabel: true
-										},
+										backgroundColor: '#ffffff',
 										xAxis: [{
 											type: 'category',
-											data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+											show: true,
+											data: ['古北水镇', '司马小烧酒坊', '永顺染坊', '震源镖局', '八旗会馆', '司马台长城'],
+											axisPointer: {
+												type: 'shadow'
+											},
 											axisTick: {
-												alignWithLabel: true
-											}
+												show: false
+											},
 										}],
 										yAxis: [{
 											type: 'value'
 										}],
 										series: [{
-											name: '直接访问',
-											type: 'bar',
-											barWidth: '60%',
-											data: [10, 52, 200, 334, 390, 330, 220]
-										}]
-									};
-									myChart.setOption(option);
-								</script>
-							</div>
-						</td>
-					</tr>
-				</table>
-				<table id="con_table_2" width="1663px">
-					<tr>
-						<td>
-							<div id="boxa1-1">
-								<script type="text/javascript">
-									var myChart = echarts.init(document.getElementById('boxa1-1'));
-									var option = {
-										backgroundColor: '#ffffff',
-										title: {
-											text: 'Customized Pie',
-											left: 'center',
-											top: 20,
-											textStyle: {
-												color: '#ccc'
-											}
-										},
+												name: '访客人数',
+												type: 'bar',
+												barWidth: '30%',
+												data: [{
+														value: 30,
+														itemStyle: {
+															normal: {
+																color: '#33FFFF'
 
-										tooltip: {
-											trigger: 'item',
-											formatter: "{a} <br/>{b} : {c} ({d}%)"
-										},
-
-										visualMap: {
-											show: false,
-											min: 80,
-											max: 600,
-											inRange: {
-												colorLightness: [0, 1]
-											}
-										},
-										series: [{
-											name: '访问来源',
-											type: 'pie',
-											radius: '80%',
-											center: ['50%', '50%'],
-											data: [{
-													value: 335,
-													name: '直接访问'
-												},
-												{
-													value: 310,
-													name: '邮件营销'
-												},
-												{
-													value: 274,
-													name: '联盟广告'
-												},
-												{
-													value: 235,
-													name: '视频广告'
-												},
-												{
-													value: 400,
-													name: '搜索引擎'
-												}
-											].sort(function(a, b) {
-												return a.value - b.value;
-											}),
-											roseType: 'radius',
-											label: {
-												normal: {
-													textStyle: {
-														color: 'rgba(255, 255, 255, 0.3)'
-													}
-												}
-											},
-											labelLine: {
-												normal: {
-													lineStyle: {
-														color: 'rgba(255, 255, 255, 0.3)'
+															}
+														}
 													},
-													smooth: 0.2,
-													length: 10,
-													length2: 20
-												}
-											},
-											itemStyle: {
-												normal: {
-													color: '#c23531',
-													shadowBlur: 200,
-													shadowColor: 'rgba(0, 0, 0, 0.5)'
-												}
-											},
+													{
+														value: 60,
+														itemStyle: {
+															normal: {
+																color: 'yellow'
 
-											animationType: 'scale',
-											animationEasing: 'elasticOut',
-											animationDelay: function(idx) {
-												return Math.random() * 200;
+															}
+														}
+													},
+													{
+														value: 70,
+														itemStyle: {
+															normal: {
+																color: 'orange'
+
+															}
+														}
+													}, {
+														value: 80,
+														itemStyle: {
+															normal: {
+																color: '#00CCFF'
+
+															}
+														}
+													}, {
+														value: 20,
+														itemStyle: {
+															normal: {
+																color: '#C0C0C0'
+
+															}
+														}
+													}
+
+												]
 											}
-										}]
+
+										]
 									};
 									myChart.setOption(option);
 								</script>
 							</div>
 						</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
 					</tr>
 				</table>
 			</div>

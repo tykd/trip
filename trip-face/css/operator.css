@@ -116,6 +116,22 @@
 	border-radius: 4px;
 	margin:5px;
 }
+
+.box1{
+	width: 780px;
+	height: 344px;
+	background-color: #ffffff;
+	border-radius: 4px;
+	margin:5px;
+}
+
+.box2{
+	width: 1571px;
+	height: 828px;
+	background-color: #ffffff;
+	border-radius: 4px;
+	margin:5px;
+}
 #footer{
 	height: 80px;
 	text-align: center;

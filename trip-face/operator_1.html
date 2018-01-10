@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>运营数据</title>
+		<link rel="stylesheet" href="css/operator.css" />
+		<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
+		<script src="js/echarts.js"></script>
+		<script type="text/javascript" src="js/operator.js"></script>
+		<script type="text/javascript">
+			$(function() {
+
+			});
+		</script>
+	</head>
+
+	<body>
+		<div id="page">
+			<div id="titleTab">
+				<ul id="myTab" class="nav nav-tabs">
+					<p><img src="image/logo.png" /></p>
+					<li class="active">
+						<a href="#home" data-toggle="tab" onclick="home(this);"><img src="image/kk.png" />当前概况</a>
+					</li>
+					<li>
+						<a href="#ios" data-toggle="tab" onclick="fo1(this);"><img src="image/yy.png" />运营数据</a>
+					</li>
+					<li class="dropdown">
+						<a href="#java" data-toggle="tab" onclick="fo2(this);"><img src="image/ls.png" />历史数据</a>
+					</li>
+				</ul>
+			</div>
+			<div id="con">
+				<div id="myTabContent" class="tab-content">
+					<div class="tab-pane fade in active" id="home">
+						<div id="tle">
+							<div>> 运营数据</div>
+							<div id="userName">古北水镇景区<img src="image/toux.png" /></div>
+						</div>
+					</div>
+				</div>
+				<div id="nav">
+					<ul type="none">
+						<li>
+							<a href="operator.html">今日游客画像统计</a>
+						</li>
+						<li>
+							<a style="color: #08A2F3; font-weight: bold;" href="operator_1.html">今日景点人数统计</a>
+						</li>
+						<li>
+							<a href="operator_2.html">距离最大接待量剩余（人）</a>
+						</li>
+					</ul>
+				</div>
+				<table id="con_table_1" width="1663px">
+					<tr>
+						<td>
+							<div id="box1-1" class="box1">
+								<script type="text/javascript">
+									var myChart = echarts.init(document.getElementById('box1-1'));
+									var option = {
+										backgroundColor: '#fffff',
+										title: {
+											text: '景区各门入园人数',
+											left: 'left',
+											top: 5
+										},
+										tooltip: {
+											trigger: 'item',
+											formatter: "{a} <br/>{b} : {c} ({d}%)"
+										},
+										visualMap: {
+											show: false,
+											min: 80,
+											max: 600,
+											inRange: {
+												colorLightness: [0, 1]
+											}
+										},
+										series: [{
+											name: '人数',
+											type: 'pie',
+											radius: '75%',
+											center: ['50%', '50%'],
+											data: [{
+													value: 335,
+													name: '东门'
+												},
+												{
+													value: 310,
+													name: '西门'
+												},
+												{
+													value: 274,
+													name: '南门'
+												}
+											].sort(function(a, b) {
+												return a.value - b.value;
+											}),
+											roseType: 'radius',
+											label: {
+												normal: {
+													textStyle: {
+														color: 'rgba(255, 255, 255, 0.3)'
+													}
+												}
+											},
+											labelLine: {
+												normal: {
+													lineStyle: {
+														color: 'rgba(255, 255, 255, 0.3)'
+													},
+													smooth: 0.2,
+													length: 10,
+													length2: 20
+												}
+											},
+											itemStyle: {
+												normal: {
+													color: '#c23531'
+												}
+											},
+
+											animationType: 'scale',
+											animationEasing: 'elasticOut',
+											animationDelay: function(idx) {
+												return Math.random() * 200;
+											}
+										}]
+									};
+									myChart.setOption(option);
+								</script>
+							</div>
+						</td>
+						<td>
+							<div id="box1-2" class="box1">
+								<script type="text/javascript">
+									var myChart = echarts.init(document.getElementById('box1-2'));
+									var option = {
+										title: {
+											text: '各景点人数',
+											left: 'left',
+											top: 5
+										},
+										tooltip: {
+											trigger: 'axis',
+											axisPointer: { // 坐标轴指示器，坐标轴触发有效
+												type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+											}
+										},
+										backgroundColor: '#fffff',
+										grid: {
+											left: '3%',
+											right: '4%',
+											bottom: '5%',
+											containLabel: true
+										},
+										xAxis: [{
+											type: 'category',
+											data: ['司马小烧酒坊', '英华书院', '八旗会馆', '永顺染坊', '杨无敌祠', '月老祠', '震远镖局'],
+											axisTick: {
+												show: false,
+												alignWithLabel: false
+											},
+											axisLabel: {
+												show: false,
+											},
+											axisLine: {
+												show: false,
+											},
+										}],
+										yAxis: [{
+											show: true,
+											type: 'value'
+										}],
+										series: [{
+											name: '人数',
+											type: 'bar',
+											barWidth: '30%',
+											label: {
+												normal: {
+													show: true,
+													position: 'bottom',
+													formatter: '{c}% \n{b}',
+													textStyle: {
+														color: '#666'
+													}
+												}
+											},
+											itemStyle: {
+												normal: {
+													barBorderRadius: 100,
+													color: function(idx) {
+														console.log(idx)
+														var color = ['#dc4e54', '#db8258', '#eda350', '#a6a34b', '#84aa6d', '#84abab']
+														return color[idx.dataIndex % color.length]
+													}
+												}
+											},
+											data: [31, 28, 28, 26, 21, 25]
+										}]
+									};
+
+									myChart.setOption(option);
+								</script>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div id="box2-1" class="box1">
+								<script type="text/javascript">
+									var myChart = echarts.init(document.getElementById('box2-1'));
+									var option = {
+										title: {
+											text: '各商圈人数',
+											left: 'left',
+											top: 5
+										},
+										backgroundColor: '#fffff',
+										tooltip: {
+											trigger: 'axis',
+											axisPointer: {
+												type: 'none'
+											},
+											formatter: function(params) {
+												return params[0].name + ': ' + params[0].value;
+											}
+										},
+										xAxis: {
+											data: ['古北水镇\n丰悦民俗', '司马台鑫\n苑居农家院', '望山阁农\n家院', '古北水镇\n恒源民俗', '古北水镇\n冯素云农家院', '司马台郝\n彬农家院', ],
+											axisTick: {
+												show: false
+											},
+											axisLine: {
+												show: false
+											},
+											axisLabel: {
+												textStyle: {
+													color: '#e54035'
+												}
+											}
+										},
+										yAxis: {},
+										color: ['#FF8C00'],
+										series: [{
+											name: 'hill',
+											type: 'pictorialBar',
+											barCategoryGap: '-20%',
+											symbol: 'path://M0,10 L10,10 C5.5,10 5.5,5 5,0 C4.5,5 4.5,10 0,10 z',
+											itemStyle: {
+												normal: {
+													opacity: 0.5
+												},
+												emphasis: {
+													opacity: 1
+												}
+											},
+											data: [4000, 5000, 5800, 4800, 4500, 3800],
+											z: 10
+										}, {
+											name: 'glyph',
+											type: 'pictorialBar',
+											barGap: '-120%',
+											symbolPosition: 'end',
+											symbolSize: 50,
+											symbolOffset: [0, '-120%'],
+										}]
+									};
+									myChart.setOption(option);
+								</script>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div id="footer">
+				<p><span>版权所有：大唐移动通信设备有限公司</span></p>
+			</div>
+		</div>
+	</body>
+
+</html>
