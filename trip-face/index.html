@@ -9,19 +9,6 @@
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
 		<script src="js/echarts.js"></script>
-		<script type="text/javascript">
-			function home(var1) {
-				$(this).next().remove();
-			}
-
-			function fo1(var2) {
-
-			}
-
-			function fo2(var3) {
-
-			}
-		</script>
 	</head>
 
 	<body>
@@ -30,13 +17,13 @@
 				<ul id="myTab" class="nav nav-tabs">
 					<p><img src="image/logo.png" /></p>
 					<li class="active">
-						<a href="#home" data-toggle="tab" onclick="home(this);"><img src="image/kk.png" />当前概况</a>
+						<a href="#"><img src="image/kk.png" />当前概况</a>
 					</li>
-					<li>
-						<a href="#ios" data-toggle="tab" onclick="fo1(this);"><img src="image/yy.png" />运营数据</a>
+					<li  class="active">
+						<a href="operator.html"><img src="image/yy.png" />运营数据</a>
 					</li>
-					<li class="dropdown">
-						<a href="#java" data-toggle="tab" onclick="fo2(this);"><img src="image/ls.png" />历史数据</a>
+					<li class="active">
+						<a href="sumIndex.html"><img src="image/ls.png" />历史数据</a>
 					</li>
 				</ul>
 			</div>
@@ -44,7 +31,7 @@
 				<div id="myTabContent" class="tab-content">
 					<div class="tab-pane fade in active" id="home">
 						<div id="tle">
-							<div>> 当前情况</div>
+							<div>>   当前情况</div>
 							<div id="userName">古北水镇景区<img src="image/toux.png" /></div>
 						</div>
 						<div id="msg">
@@ -296,43 +283,7 @@
 						</script>
 						<div id="mapmsg">
 							<p>景区当前人流热点、流向、人数地图</p>
-
-						</div>
-					</div>
-					<div class="tab-pane fade" id="ios">
-						<div id="tle">
-							<div>> 运营数据 > 今日游客画像统计</div>
-							<div id="userName">古北水镇景区<img src="image/toux.png" /></div>
-						</div>
-
-						<!--<div id="yy">
-	<ul id="myTab" class="nav nav-tabs">
-	<li class="active">
-		<a href="#portrayal" data-toggle="tab">今日游客画像统计</a>
-	</li>
-	<li><a href="#numberPeoper" data-toggle="tab">今日景点人数统计</a></li>
-	<li class="dropdown">
-		<a  href="#tourist" data-toggle="tab">距最大接待量剩余</a>
-	</li>
-</ul>
-</div>-->
-						<!--<div id="myTabContent" class="tab-content">
-	<div class="tab-pane fade in active" id="portrayal">
-		<p>菜鸟教程是一个提供最新的web技术站点，本站免费提供了建站相关的技术文档，帮助广大web技术爱好者快速入门并建立自己的网站。菜鸟先飞早入行——学的不仅是技术，更是梦想。</p>
-	</div>
-	<div class="tab-pane fade" id="numberPeoper">
-		<p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple 
-			TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>
-	</div>
-	<div class="tab-pane fade" id="tourist">
-		<p>sadfdsf</p>
-	</div>
-</div>-->
-					</div>
-					<div class="tab-pane fade" id="java">
-						<div id="tle">
-							<div>> 历史数据 </div>
-							<div id="userName">古北水镇景区<img src="image/toux.png" /></div>
+							<img src="image/map.png"/>
 						</div>
 					</div>
 				</div>

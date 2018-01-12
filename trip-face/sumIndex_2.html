@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+<meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1">
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8;">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title ></title>
+			<link rel="stylesheet" href="https://at.alicdn.com/t/font_234130_nem7eskcrkpdgqfr.css">
+	<style>
+		ul{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		#schedule-box{
+			width: 414px;
+			height: 220px;
+			font-size: 13px;
+		}
+		.schedule-hd{
+			display: flex;
+			justify-content: space-between;
+			padding: 5px 15px;
+			margin-bottom: 5px;
+			font-size: 16px;
+		}
+		.today{
+			flex: 1;
+			text-align: center;
+		}
+		.ul-box{
+			overflow: hidden;
+		}
+		.ul-box > li{
+			float: left;
+			width: 14.28%;
+			text-align: center;
+		}
+		.other-month{
+			color: #999999;
+		}
+		.current-month{
+			color: #333333;
+		}
+		.today-style{
+			border-radius: 50%;
+			background: #58d321;
+		}
+		.arrow{
+			cursor: pointer;
+		}
+		.dayStyle{
+			display: inline-block;
+			width: 35px;
+			height: 30px;
+			border-radius: 50%;
+			text-align: center;
+			line-height: 30px;
+			cursor: pointer;
+		}
+		.current-month > .dayStyle:hover{
+			background: #00BDFF;
+			color: #ffffff;
+		}
+		.today-flag{
+			background: #00C2B1;
+			color: #fff;
+		}
+		.selected-style {
+			background: #00BDFF;
+			color: #ffffff;
+		}
+		#h3Ele{
+			text-align: center;
+			padding: 10px;
+		}
+	</style>
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+			<link rel="stylesheet" href="css/operator.css" />
+		<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/calendar.css" />
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<script type="text/javascript" src="js/bootstrap/bootstrap.min.js" ></script>
+		<script type="text/javascript" src="js/operator.js"></script>
+		<script src="js/echarts.js"></script>
+	</head>
+	<body>
+		<div id="page">
+ <div id="titleTab2">
+	<ul id="myTab" class="nav nav-tabs">
+	<p><img src="image/logo.png"/></p>
+	<li class="active"><a href="index.html"><img src="image/kk.png"/>当前概况</a></li>
+	<li class="active"><a href="operator.html"><img src="image/yy.png"/>运营数据</a></li>
+	<li class="active"><a href="#"><img src="image/ls.png"/>历史数据</a></li>
+</ul>
+</div>
+<div id="con">
+<div id="myTabContent" class="tab-content">
+	<div class="tab-pane fade in active" id="home">
+						<div id="tle">
+							<div>>   历史数据      </div>
+							<div id="userName">古北水镇景区<img src="image/toux.png" /></div>
+						</div>
+					</div>
+	<div id="msg1">
+	<div id="table1">
+<table  width="1146" height="220" border="1px" >
+  <tr>
+    <td><p><img src="image/riqi.png"/>日期</p></td>
+    <td><p><img src="image/renshu.png"/>当前游客数(人)</p></td>
+    <td><p>距最大接待量剩余(人)</p></td>
+    <td><p><img src="image/zongrenshu.png"/>今日累计游客数</p></td>
+  </tr>
+  <tr>
+    <td>2018/01/02 15:30</td>
+    <td style="color: #08a2f3;">3680</td>
+    <td style="color: #4ab643;">6320</td>
+    <td style="color: #f36008;">9830</td>
+
+  </tr>
+  <tr>
+   <td><p><img src="image/time.png"/>平均停留时长</p></td>
+    <td><p><img src="image/menpiao.png"/>今日门票收入(元)</p></td>
+    <td><p><img src="image/xiaofei.png"/>今日消费收入(元)</p></td>
+    <td><p><img src="image/shouru.png"/>今日总收入(元)</p></td>
+  </tr>
+  <tr>
+  	    <td>28</td>
+    <td style="color: #08a2f3;">1966000</td>
+    <td style="color: #4ab643;">8700000</td>
+    <td style="color: #f36008;">10666000</td>
+  </tr>
+</table>
+</div>
+	<div id="demo">
+  	<div id='schedule-box' class="boxshaw"></div>
+	</div>
+	<script src="js/schedule.js"></script>
+<script>
+	var mySchedule = new Schedule({
+		el: '#schedule-box',
+		//date: '2018-9-20',
+		clickCb: function (y,m,d) {
+			document.querySelector('#h3Ele').innerHTML = '日期：'+y+'-'+m+'-'+d	
+		},
+		nextMonthCb: function (y,m,d) {
+			document.querySelector('#h3Ele').innerHTML = '日期：'+y+'-'+m+'-'+d	
+		},
+		nextYeayCb: function (y,m,d) {
+			document.querySelector('#h3Ele').innerHTML = '日期：'+y+'-'+m+'-'+d	
+		},
+		prevMonthCb: function (y,m,d) {
+			document.querySelector('#h3Ele').innerHTML = '日期：'+y+'-'+m+'-'+d	
+		},
+		prevYearCb: function (y,m,d) {
+			document.querySelector('#h3Ele').innerHTML = '日期：'+y+'-'+m+'-'+d	
+		}
+	});
+</script>
+		</div>
+<div id="se">
+	<div  id="nuberb">
+	<div class="hadline" >景区当前景点游客数量百分比</div>
+	<div class="data"><img src="image/li1.png"/>今日数据</div>
+	<div class="data"><img src="image/wai1.png"/>昨日数据</div>
+	<div class="div-padding" id="show1" style="margin-left: -10%;"></div>
+	</div>
+	<div id="perber">
+	<div class="hadline">景区人数趋势预测图</div>
+	<div class="data"><img src="image/wai2.png"/>今日数据</div>
+	<div class="data"><img src="image/li2.png" />昨日数据</div>
+	<div class="div-padding" id="show2" style=""></div>
+	<script type="text/javascript">
+	var myChart=echarts.init(document.getElementById('show2'));
+	var option = {
+    toolbox: {
+        show : true
+    },
+    calculable : true,
+    xAxis : [
+        {
+            type : 'category',
+            boundaryGap : false,
+            data : ['7:00','8:00','9:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00','22:00',]
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value'
+        }
+    ],
+    series : [
+        {
+            name:'今日数据',
+            type:'line',
+
+            symbol: 'none',
+            smooth:true,
+            itemStyle: {normal: {areaStyle: {type: 'default'},color: new echarts.graphic.LinearGradient( 0, 0, 0, 1,[
+                    {offset: 0, color: 'rgba(122,245,196,0.7)'},
+                    {offset: 1, color: 'rgba(30,224,245,0.7)'}
+                ])}},
+            data:[0, 200, 700, 2400,3200, 5000, 5300, 5350, 5000, 5350, 6500, 3800, 2300,1500, 300, 150]
+        },        {
+            name:'昨日数据',
+            type:'line',
+            symbol: 'none',
+            smooth:true,
+            itemStyle: {normal: {areaStyle: {type: 'default'},color: new echarts.graphic.LinearGradient( 0, 0, 0, 1,[
+                    {offset: 0, color: 'rgba(255,172,136,0.5)'},
+                    {offset: 1, color: 'rgba(255,177,132,0.7)'}
+                ])}},
+            data:[10, 1100, 1800, 2400, 5000, 5800, 5700, 6110, 5200, 5500, 5450, 4000, 3100,1860, 500, 50]
+        }
+    ]
+};
+ // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+</script>
+	</div>
+</div>
+
+<script type="text/javascript">
+	var myChart=echarts.init(document.getElementById('show1'));
+	var option = {
+    tooltip: {
+        trigger: 'item',
+        formatter: " {b}:  ({d}%)"
+    },
+    legend: {
+        orient: 'vertical',
+          x: 'right',
+        y:'65',
+        data:['古北水镇','司马小烧酒坊','永顺染坊','震远镖局','八旗会馆','司马台长城']
+    },
+    series: [
+        {
+            name:'访问来源',
+            type:'pie',
+            selectedMode: 'single',
+            radius: [0, '55%'],
+
+            label: {
+                normal: {
+                    position: 'inner'
+                }
+            },
+            labelLine: {
+                normal: {
+                    show: false
+                }
+            },
+            data:[
+                {value:180, name:'司马小\n烧酒\n坊18%'},
+                {value:130, name:'永顺\n染坊13%'},
+                {value:180, name:'震远\n镖局18%'},
+                {value:140, name:'八旗\n会馆\n14%'},
+                {value:150, name:'司马台\n长城\n15%'},
+                 {value:220, name:'古北\n水镇22%'}
+                 
+            ]
+        },
+        {
+            name:'访问来源',
+            type:'pie',
+            radius: ['67%', '83%'],
+            label: {
+                normal: {
+                    formatter: '{b}：{hr|}\n {per|{d}%}  ',
+                    backgroundColor: '#eee',
+                    borderColor: '#aaa',
+                    borderWidth: 1,
+                    borderRadius: 4,
+                    rich: {
+                        hr: {
+                            borderColor: '#aaa',
+                            width: 0,
+                            borderWidth: 0.5,
+                            height: 30
+                        },
+                        b: {
+                            fontSize: 14,
+                            lineHeight: 33
+                        },
+                        per: {
+                            color: '#000',
+                            padding: [2, 4],
+                            borderRadius: 2
+                        }
+                    }
+                }
+            },
+            data:[
+                {value:120, name:'司马小烧酒坊'},
+                {value:180, name:'永顺染坊'},
+                {value:100, name:'震远镖局'},
+                {value:180, name:'八旗会馆'},
+                {value:160, name:'司马台长城'},
+                {value:260, name:'古北水镇'}
+            ]
+        }
+    ]
+};
+ // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+</script>
+<div id="mapmsg">
+		<p>景区当前人流热点、流向、人数地图</p>
+<img src="image/map.png"/>
+</div>
+<div id="nav1">
+					<ul type="none">
+						<li>
+							<a href="sumIndex.html">今日游客画像统计</a>
+						</li>
+						<li>
+							<a href="sumIndex_1.html">今日景点人数统计</a>
+						</li>
+						<li>
+							<a style="color: #08A2F3; font-weight: bold;" href="operator_2.html">距离最大接待量剩余（人）</a>
+						</li>
+					</ul>
+				</div>
+				<table id="con_table_11" width="1663px">
+					<tr>
+						<td>
+							<div id="box1-1" class="box2">
+								<script type="text/javascript">
+									var myChart = echarts.init(document.getElementById('box1-1'));
+									var option = {
+										backgroundColor: '#ffffff',
+										tooltip: {
+											trigger: 'axis',
+											axisPointer: { // 坐标轴指示器，坐标轴触发有效
+												type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+											}
+										},
+										title: [{
+											left: 'left',
+											text: '交通方式'
+										}],
+										grid: {
+											containLabel: true
+										},
+										xAxis: [{
+											type: 'value'
+										}],
+										yAxis: [{
+											type: 'category',
+											axisTick: {
+												show: false
+											},
+											data: ['景区内餐饮收入', '游乐设施收入', '索道收入', '缆车收入','门票收入']
+										}],
+										itemStyle: {
+												normal: {
+													barBorderRadius: 50,
+													color: function(idx) {
+														console.log(idx)
+														var color = ['#dc4e54', '#db8258', '#eda350', '#a6a34b', '#84aa6d', '#84abab']
+														return color[idx.dataIndex % color.length]
+													}
+												}
+											},
+										series: [{
+											name: '收入',
+											type: 'bar',
+											 barWidth : 50,
+											label: {
+												normal: {
+													show: true,
+													position: 'inside'
+												}
+											},
+											data: [{
+														value: 30000,
+														itemStyle: {
+															normal: {
+																color: '#33FFFF'
+
+															}
+														}
+													},
+													{
+														value: 40000,
+														itemStyle: {
+															normal: {
+																color: '#35ecba'
+
+															}
+														}
+													},{
+														value: 50000,
+														itemStyle: {
+															normal: {
+																color: '#f97b37'
+
+															}
+														}
+													},
+													{
+														value: 60000,
+														itemStyle: {
+															normal: {
+																color: '#d53131'
+
+															}
+														}
+													},
+													{
+														value: 70000,
+														itemStyle: {
+															normal: {
+																color: '#d389fe'
+
+															}
+														}
+													}
+													
+											]
+										}]
+									};
+									myChart.setOption(option);
+								</script>
+							</div>
+						</td>
+					</tr>
+				</table>
+</div>
+
+<div id="footer">
+	<p><span>版权所有：大唐移动通信设备有限公司</span></p>
+</div>
+</div>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+

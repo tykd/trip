@@ -4,6 +4,23 @@
 			#titleTab #myTab > li > a {text-align: center;}
 			#titleTab #myTab > p {text-align: center; margin-top: 20px; margin-bottom: 20px;}
 			#titleTab{float: left; height: 1080px; width: 240px;}
+			#titleTab1 #myTab{width: 240px;height: 2150px; background-color: #1e2533; }
+			#titleTab1 #myTab > li { width:240px; float: left;}
+			#titleTab1 #myTab > li > a {text-align: center;}
+			#titleTab1 #myTab > p {text-align: center; margin-top: 20px; margin-bottom: 20px;}
+			#titleTab1{float: left; height: 2150px; width: 240px;}
+				#titleTab2 #myTab{width: 240px;height: 2125px; background-color: #1e2533; }
+			#titleTab2 #myTab > li { width:240px; float: left;}
+			#titleTab2 #myTab > li > a {text-align: center;}
+			#titleTab2 #myTab > p {text-align: center; margin-top: 20px; margin-bottom: 20px;}
+			#titleTab2{float: left; height: 2125px; width: 240px;}
+			
+				#titleTab3 #myTab{width: 240px;height:2000px; background-color: #1e2533; }
+			#titleTab3 #myTab > li { width:240px; float: left;}
+			#titleTab3 #myTab > li > a {text-align: center;}
+			#titleTab3 #myTab > p {text-align: center; margin-top: 20px; margin-bottom: 20px;}
+			#titleTab3{float: left; height: 2000px; width: 240px;}
+			
 			#con{float:left; width: 1663px; background-color: #f2f2f2;}
 			#footer > p {text-align: center; padding-bottom: 8px;}
 			#tle{height: 80px;}
@@ -20,6 +37,7 @@
 			#perber{margin-left: 18px;}
 			#mapmsg {width: 1584px; height: 357px;background-color: white; margin-left: 49px; margin-bottom: 34px;}
 			#mapmsg > p {padding-top: 26px; padding-left: 26px;}
+			#mapmsg > img {padding-left: 26px; padding-bottom: 10px;}
 			.hadline {width:456px; font-size: 18px; font-weight: bold; margin-top: 26px;letter-spacing: 1.5px;float: left;}
 			.data > img {margin-right: 8px;}
 			.data {width: 150px;float: left;margin-top: 28px;}
@@ -34,5 +52,15 @@
 			background-color: white;
 			border-bottom: 2px solid #07a2f2;
 			}
+			#msg1 { height:250px;margin-top: 17px; margin-bottom: 17px;}
+			#table1 {float: left;width: 1146px;}
+			#demo {
+	margin-left: 55px;
+	width: 430px;
+	height: 220px;
+	float: left;
+	background-color: #FFFFFF;
+	margin-top: 5px;
+}
 			/*#portrayal {height: 839px;width: 1592px;margin-left: 24px;margin-top: 17px;}
 			#portrayal div {float: left; margin-left: 10px; background-color: burlywood; height: 273px; width: 524px;}*/
