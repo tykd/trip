@@ -129,9 +129,9 @@
   </tr>
   <tr>
   	    <td>28</td>
-    <td style="color: #08a2f3;">1966000</td>
-    <td style="color: #4ab643;">8700000</td>
-    <td style="color: #f36008;">10666000</td>
+    <td style="color: #08a2f3;">196,6000</td>
+    <td style="color: #4ab643;">870,0000</td>
+    <td style="color: #f36008;">1066,6000</td>
   </tr>
 </table>
 </div>
@@ -254,12 +254,12 @@
                 }
             },
             data:[
-                {value:180, name:'司马小\n烧酒\n坊18%'},
-                {value:130, name:'永顺\n染坊13%'},
-                {value:180, name:'震远\n镖局18%'},
-                {value:140, name:'八旗\n会馆\n14%'},
-                {value:150, name:'司马台\n长城\n15%'},
-                 {value:220, name:'古北\n水镇22%'}
+               {value:200, name:'司马小烧\n酒坊'},
+                {value:130, name:'永顺染坊'},
+                {value:180, name:'震远镖局'},
+                {value:140, name:'八旗\n会馆'},
+                {value:150, name:'司马台长城'},
+                 {value:200, name:'古北水镇'}
                  
             ]
         },
@@ -319,15 +319,15 @@
 							<a href="sumIndex.html">今日游客画像统计</a>
 						</li>
 						<li>
-							<a style="color: #08A2F3; font-weight: bold;" href="operator_1.html">今日景点人数统计</a>
+							<a style="color: #08A2F3; font-weight: bold;" href="sumIndex_1.html">今日景点人数统计</a>
 						</li>
 						<li>
-							<a href="sumIndex_2.html">距离最大接待量剩余（人）</a>
+							<a href="sumIndex_2.html">今日各景点人数统计列表</a>
 						</li>
 					</ul>
 				</div>
 			<table id="con_table_11" width="1663px">
-					<tr>
+				<tr>
 						<td>
 							<div id="box1-1" class="box1">
 								<script type="text/javascript">
@@ -375,14 +375,14 @@
 											label: {
 												normal: {
 													textStyle: {
-														color: 'rgba(255, 255, 255, 0.3)'
+														color: 'rgba(0, 0, 0, 1)'
 													}
 												}
 											},
 											labelLine: {
 												normal: {
 													lineStyle: {
-														color: 'rgba(255, 255, 255, 0.3)'
+														color: 'rgba(0, 0, 0, 1)'
 													},
 													smooth: 0.2,
 													length: 10,
@@ -393,13 +393,13 @@
 												normal: {
 													color: '#c23531'
 												}
-											},
-
-											animationType: 'scale',
-											animationEasing: 'elasticOut',
-											animationDelay: function(idx) {
-												return Math.random() * 200;
 											}
+
+//											animationType: 'scale',
+//											animationEasing: 'elasticOut',
+//											animationDelay: function(idx) {
+//												return Math.random() * 200;
+//											}
 										}]
 									};
 									myChart.setOption(option);
@@ -455,7 +455,7 @@
 												normal: {
 													show: true,
 													position: 'bottom',
-													formatter: '{c}% \n{b}',
+													formatter: '{c} \n{b}',
 													textStyle: {
 														color: '#666'
 													}
@@ -486,67 +486,100 @@
 								<script type="text/javascript">
 									var myChart = echarts.init(document.getElementById('box2-1'));
 									var option = {
-										title: {
-											text: '各商圈人数',
-											left: 'left',
-											top: 5
-										},
-										backgroundColor: '#fffff',
+										backgroundColor: '#ffffff',
 										tooltip: {
 											trigger: 'axis',
-											axisPointer: {
-												type: 'none'
-											},
-											formatter: function(params) {
-												return params[0].name + ': ' + params[0].value;
+											axisPointer: { // 坐标轴指示器，坐标轴触发有效
+												type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
 											}
 										},
-										xAxis: {
-											data: ['古北水镇\n丰悦民俗', '司马台鑫\n苑居农家院', '望山阁农\n家院', '古北水镇\n恒源民俗', '古北水镇\n冯素云农家院', '司马台郝\n彬农家院', ],
+										title: [{
+											left: 'left',
+											text: '各商圈人数',
+											top:5
+										}],
+										grid: {
+											containLabel: true
+										},
+										xAxis: [{
+											type: 'value'
+										}],
+										yAxis: [{
+											type: 'category',
 											axisTick: {
 												show: false
 											},
-											axisLine: {
-												show: false
-											},
-											axisLabel: {
-												textStyle: {
-													color: '#e54035'
-												}
-											}
-										},
-										yAxis: {},
-										color: ['#FF8C00'],
+											data: ['古北水镇\n丰悦民俗', '司马台鑫\n苑居农家院', '望山阁农\n家院', '古北水镇\n恒源民俗', '古北水镇\n冯素云农家院', '司马台郝\n彬农家院', ],
+										}],
 										series: [{
-											name: 'hill',
-											type: 'pictorialBar',
-											barCategoryGap: '-20%',
-											symbol: 'path://M0,10 L10,10 C5.5,10 5.5,5 5,0 C4.5,5 4.5,10 0,10 z',
-											itemStyle: {
+											name: '人数',
+											type: 'bar',
+											label: {
 												normal: {
-													opacity: 0.5
-												},
-												emphasis: {
-													opacity: 1
+													show: true,
+													position: 'inside'
 												}
 											},
-											data: [4000, 5000, 5800, 4800, 4500, 3800],
-											z: 10
-										}, {
-											name: 'glyph',
-											type: 'pictorialBar',
-											barGap: '-120%',
-											symbolPosition: 'end',
-											symbolSize: 50,
-											symbolOffset: [0, '-120%'],
+											data: [{
+														value: 4000,
+														itemStyle: {
+															normal: {
+																color: '#33FFFF'
+
+															}
+														}
+													},
+													{
+														value: 5000,
+														itemStyle: {
+															normal: {
+																color: '#35ecba'
+
+															}
+														}
+													},{
+														value: 5800,
+														itemStyle: {
+															normal: {
+																color: '#f97b37'
+
+															}
+														}
+													},
+													{
+														value: 4800,
+														itemStyle: {
+															normal: {
+																color: '#d53131'
+
+															}
+														}
+													},{
+														value: 3800,
+														itemStyle: {
+															normal: {
+																color: '#a6a34b'
+
+															}
+														}
+													},{
+														value: 4800,
+														itemStyle: {
+															normal: {
+																color: '#84abab'
+
+															}
+														}
+													}]
 										}]
 									};
 									myChart.setOption(option);
 								</script>
 							</div>
 						</td>
+						<td></td>
 					</tr>
-				</table>	
+				</table>
 				</div>
 <div id="footer">
 	<p><span>版权所有：大唐移动通信设备有限公司</span></p>

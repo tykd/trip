@@ -129,9 +129,9 @@
   </tr>
   <tr>
   	    <td>28</td>
-    <td style="color: #08a2f3;">1966000</td>
-    <td style="color: #4ab643;">8700000</td>
-    <td style="color: #f36008;">10666000</td>
+    <td style="color: #08a2f3;">196,6000</td>
+    <td style="color: #4ab643;">870,0000</td>
+    <td style="color: #f36008;">1066,6000</td>
   </tr>
 </table>
 </div>
@@ -254,12 +254,12 @@
                 }
             },
             data:[
-                {value:180, name:'司马小\n烧酒\n坊18%'},
-                {value:130, name:'永顺\n染坊13%'},
-                {value:180, name:'震远\n镖局18%'},
-                {value:140, name:'八旗\n会馆\n14%'},
-                {value:150, name:'司马台\n长城\n15%'},
-                 {value:220, name:'古北\n水镇22%'}
+                {value:200, name:'司马小烧\n酒坊'},
+                {value:130, name:'永顺染坊'},
+                {value:180, name:'震远镖局'},
+                {value:140, name:'八旗\n会馆'},
+                {value:150, name:'司马台长城'},
+                 {value:200, name:'古北水镇'}
                  
             ]
         },
@@ -322,7 +322,7 @@
 							<a href="sumIndex_1.html">今日景点人数统计</a>
 						</li>
 						<li>
-							<a href="sumIndex_2.html">距离最大接待量剩余（人）</a>
+							<a href="sumIndex_2.html">今日各景点人数统计列表</a>
 						</li>
 					</ul>
 				</div>
@@ -335,8 +335,9 @@
 									var option = {
 										backgroundColor: '#ffffff',
 										title: {
-											text: '本地有课及外来来源省份',
-											x: 'left'
+											text: '本地游客及外来来源省份',
+											x: 'left',
+											top:5
 										},
 										tooltip: {
 											trigger: 'item',
@@ -345,7 +346,7 @@
 										legend: {
 											orient: 'vertical',
 											left: 'right',
-											data: ['北京', '山西', '河南', '河北', '上海']
+											data: ['北京', '山西', '河南', '河北', '上海','本地'],
 										},
 										series: [{
 											name: '访问来源',
@@ -371,6 +372,10 @@
 												{
 													value: 1548,
 													name: '上海'
+												},
+												{
+													value: 1548,
+													name: '本地'
 												}
 											],
 											itemStyle: {
@@ -394,7 +399,8 @@
 										backgroundColor: '#ffffff',
 										title: {
 											text: '性别',
-											x: 'left'
+											x: 'left',
+											top:5
 										},
 										tooltip: {
 											trigger: 'item',
@@ -439,7 +445,8 @@
 									var option = {
 										title: {
 											text: '年龄区间',
-											x: 'left'
+											x: 'left',
+											top:5
 										},
 										backgroundColor: '#white',
 										color: ['#3398DB'],
@@ -516,7 +523,8 @@
 
 										title: [{
 											left: 'left',
-											text: '日消费区间'
+											text: '日消费区间',
+											top:5
 										}],
 										tooltip: {
 											trigger: 'axis'
@@ -553,7 +561,8 @@
 										},
 										title: [{
 											left: 'left',
-											text: '交通方式'
+											text: '交通方式',
+											top:5
 										}],
 										grid: {
 											containLabel: true
@@ -627,7 +636,7 @@
 										title: {
 											text: '购物类型比例',
 											left: 'left',
-											top: 20,
+											top: 5,
 											textStyle: {
 												color: '#000000'
 											}
@@ -719,7 +728,8 @@
 									var option = {
 										title: {
 											text: '各景点累计人数比例',
-											x: 'left'
+											x: 'left',
+											top: 5
 										},
 										tooltip: {
 											trigger: 'axis',
@@ -804,7 +814,7 @@
 										title: {
 											text: '各景点附近消费占比',
 											left: 'left',
-											top: 20,
+											top: 5,
 											textStyle: {
 												color: '#000000'
 											}
@@ -868,7 +878,8 @@
 									var option = {
 										title: {
 											text: '游玩时长比例',
-											x: 'left'
+											x: 'left',
+											top:5
 										},
 										tooltip: {
 											trigger: 'axis',
@@ -945,6 +956,7 @@
 								</script>
 							</div>
 						</td>
+						<td></td>
 					</tr>
 				</table>
 				</div>
